@@ -23,7 +23,7 @@ module.exports = {
     ecmaVersion: 'latest',
   },
   plugins: [
-    'react', 'jest', 'cypress'
+    'react', 'cypress'
   ],
   rules: {
     indent: [
