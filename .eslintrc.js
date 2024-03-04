@@ -3,6 +3,8 @@ module.exports = {
     node: true,
     commonjs: true,
     es2021: true,
+    browser: true,
+    'cypress/globals': true,
   },
   extends: 'airbnb',
   overrides: [
@@ -21,6 +23,9 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest',
   },
+  plugins: [
+    'react', 'jest', 'cypress'
+  ],
   rules: {
     indent: [
       'error',

@@ -25,13 +25,19 @@ jobs:
           - name: build
             working-directory: .
             run: npm run build:ui
+          - name: e2e tests
+            uses: cypress-io/github-action@v5
+            with:
+              command: npm run test:e2e
+              start: npm run dev
+              wait-on: http://localhost:3001
           - name: Notify Discord on Success
             if: success()
             uses: rjstone/discord-webhook-notify@v1.0.4
             with:
                 webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
                 username: 'GitHub Actions'
-                text: 'A new version has been successfully deployed 🚀'
+                text: 'A new version has been successfully pushed 🚀'
           - name: Notify Discord on Failure
             if: failure()
             uses: rjstone/discord-webhook-notify@v1.0.4
