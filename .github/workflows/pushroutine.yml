@@ -15,7 +15,10 @@ jobs:
               node-version: '20'
           - name: Install dependencies
             working-directory: .
-            run: npm install  
+            run: npm install
+          - name: Install dependencies
+            working-directory: ./frontend
+            run: npm install   
           - name: Check style
             working-directory: .
             run: npm run lint
