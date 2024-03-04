@@ -24,4 +24,4 @@ jobs:
             run: npm run lint
           - name: build
             working-directory: .
-            run: npm run build
+            run: npm run build:ui
