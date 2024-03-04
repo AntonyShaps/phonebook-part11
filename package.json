@@ -1,7 +1,7 @@
 {
   "name": "part3",
   "version": "1.0.0",
-  "description": "part3 FSO",
+  "description": "part11 CI/CD",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
@@ -15,14 +15,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AntonyShaps/part3.git"
+    "url": "git+https://github.com/AntonyShaps/phonebook-part11.git"
   },
   "author": "Anton Shapovalov",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/AntonyShaps/part3/issues"
+    "url": "https://github.com/AntonyShaps/phonebook-part11/issues"
   },
-  "homepage": "https://github.com/AntonyShaps/part3#readme",
+  "homepage": "https://github.com/AntonyShaps/phonebook-part11#readme",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
