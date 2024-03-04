@@ -1,4 +1,4 @@
-name: Deployment pipeline
+name: push pipeline
 
 on:
   push:
@@ -13,10 +13,10 @@ jobs:
           - uses: actions/setup-node@v4
             with:
               node-version: '20'
-          - name: Install dependencies
+          - name: Install dependencies (back)
             working-directory: .
             run: npm install
-          - name: Install dependencies
+          - name: Install dependencies (front)
             working-directory: ./frontend
             run: npm install   
           - name: Check style
@@ -25,3 +25,17 @@ jobs:
           - name: build
             working-directory: .
             run: npm run build:ui
+          - name: Notify Discord on Success
+            if: success()
+            uses: rjstone/discord-webhook-notify@v1.0.4
+            with:
+                webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
+                username: 'GitHub Actions'
+                text: 'A new version has been successfully deployed 🚀'
+          - name: Notify Discord on Failure
+            if: failure()
+            uses: rjstone/discord-webhook-notify@v1.0.4
+            with:
+                webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
+                username: 'GitHub Actions'
+                text: 'The build has failed ❌ Check the logs for details.'
