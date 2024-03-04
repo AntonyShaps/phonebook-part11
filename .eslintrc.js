@@ -46,6 +46,7 @@ module.exports = {
       'error',
       'never',
     ],
+    'no-underscore-dangle': ['error', { allow: ['_id', '__v'] }],
     'no-console': 0,
   },
 }

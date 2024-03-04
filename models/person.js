@@ -32,8 +32,11 @@ const personSchema = new mongoose.Schema({
 })
 personSchema.set('toJSON', {
   transform: (document, returnedObject) => {
+    // eslint-disable-next-line no-param-reassign
     returnedObject.id = returnedObject._id.toString()
+    // eslint-disable-next-line no-param-reassign
     delete returnedObject._id
+    // eslint-disable-next-line no-param-reassign
     delete returnedObject.__v
   },
 })
