@@ -13,9 +13,12 @@ jobs:
           - uses: actions/setup-node@v4
             with:
               node-version: '20'
-          - name: Install dependencies 
+          - name: Install dependencies
+            working-directory: .
             run: npm install  
           - name: Check style
+            working-directory: .
             run: npm run lint
           - name: build
+            working-directory: .
             run: npm run build
